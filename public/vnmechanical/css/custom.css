@@ -1,0 +1,16 @@
+body, nav.navbar.bootsnav ul.nav > li > a,
+nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a {
+    font-family: "Open Sans", sans-serif;
+}
+nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a:hover {
+    padding-left: 15px;    
+}
+nav.navbar.bootsnav.yellow ul.nav > li > a:hover,
+nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a:hover {
+    border-top: none;
+}
+@media (min-width: 1024px) {
+    nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
+        width: 250px;
+    }
+}
