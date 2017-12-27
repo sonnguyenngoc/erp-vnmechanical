@@ -1,0 +1,110 @@
+<!-- Inner page heading start -->
+<section class="my-inner-heading-field my-inner-heading-three  my-layer-black">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-inner-heading-col">
+                    <h2>LIÊN HỆ</h2>
+                    <p>
+                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <%= link_to 'Liên Hệ', erp_vnmechanical.contact_us_path, title: 'Liên Hệ', class: 'bread-back' %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inner page heading end -->
+
+<!-- Contact start -->
+<section class="my-contact-field">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="my-contact-col my-address-box">
+                    <h4><i class="icon icon-WorldGlobe"></i> Địa chỉ</h4>
+                    <p>
+                        Upper Level, Overseas Passenger<br>
+                        Terminal, The Rocks, Sydney 2000
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my-contact-col my-address-box">
+                    <h4><i class="icon icon-Headset"></i> Số điện thoại</h4>
+                    <p>
+                        Any time. We are open 24/7<br>
+                        +1 2345-67-89000
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my-contact-col my-address-box">
+                    <h4><i class="icon icon-Mail"></i> Địa chỉ email</h4>
+                    <p>
+                        get support via email<br>
+                        mail@wpthemeshaper.com
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="my-main-contact-from">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Gửi lời nhắn hoặc góp ý cho chúng tôi</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="my-contact-col">
+                        <form id="contact_form" name="contact_form" class="contact-form" action="" method="post" novalidate="novalidate">
+                            <div class="messages"></div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input id="form_name" name="form_name" class="form-control my-form-control" placeholder="enter a name" required="required" data-error="Name is required." type="text">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input id="form_email" name="form_email" class="form-control my-form-control required email" placeholder="enter an email" required="required" data-error="Email is required." type="email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input id="form_phone" name="form_phone" class="form-control my-form-control required" placeholder="Phone" required="required" data-error="Phone Number is required." type="text">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input id="form_subject" name="form_subject" class="form-control my-form-control required" placeholder="Subject" required="required" data-error="Subject is required." type="text">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="form_message" name="form_message" class="form-control required" rows="8" placeholder="Message" required="required" data-error="Message is required."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group text-right">
+                                <input id="form_botcheck" name="form_botcheck" class="form-control my-form-control" value="" type="hidden">
+                                <button type="submit" class="btn btn-lg btn-block my-btn-yellow" data-loading-text="Getting Few Sec...">GỬI LỜI NHẮN</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact end -->
+
+<!-- Google map start -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="my-map" id="map-canvas" style="height: 520px;"></div>
+    </div>
+</div>

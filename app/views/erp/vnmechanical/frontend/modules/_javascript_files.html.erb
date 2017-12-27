@@ -16,3 +16,65 @@
 
 <!-- Custom script for all pages -->
 <%= javascript_include_tag '/vnmechanical/js/script.js' %>
+<% if params[:controller] == "erp/vnmechanical/frontend/information" && params[:action] == "contact_us" %>
+<%= javascript_include_tag 'http://maps.google.com/maps/api/js' %>
+
+<!-- Google maps -->
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#map-canvas").googleMap({
+            zoom:5, // Initial zoom level (optional)
+            coords: [48.870356 ,2.322645], // Map center (optional)
+            type: "ROADMAP", // Map type (optional)
+            address: "Canal Saint-Martin, Paris, France", // Postale Address
+            infoWindow: {
+                content: '<p style="text-align:center;"><strong>Canal Saint-Martin,</strong><br> Paris, France</p>'
+            }
+        });
+        // Marker 2
+        $("#map-canvas").addMarker({
+            coords: [48.870356 ,2.322645]
+        });
+        // Marker 3
+        $("#map-canvas").addMarker({
+            coords: [48.865358 ,2.348607]
+        });
+    });
+</script>
+<% end %>
+
+<% if params[:controller] == "erp/vnmechanical/frontend/home" && params[:action] == "index" %>
+<!-- Funfact START -->
+<script type="text/javascript">
+$(document).ready(function($) {
+     $('.start-count').each(function() {
+             var $this   = $(this);
+             $this.data('target', parseInt($this.html()));
+             $this.data('counted', false);
+             $this.html('0');
+         });
+         
+         $(window).bind('scroll', function() {
+             var speed   = 3000;
+             $('.start-count').each(function() {
+                 var $this   = $(this);
+                 if(!$this.data('counted') && $(window).scrollTop() + $(window).height() >= $this.offset().top) {
+                     $this.data('counted', true);
+                     $this.animate({dummy: 1}, {
+                         duration: speed,
+                         step:     function(now) {
+                             var $this   = $(this);
+                             var val     = Math.round($this.data('target') * now);
+                             $this.html(val);
+                             if(0 < $this.parent('.value').length) {
+                                 $this.parent('.value').css('width', val + '%');
+                             }
+                         }
+                     });
+                 }
+             });
+         }).triggerHandler('scroll');
+ });
+</script>
+<% end %>
+<!-- Script End From Here -->

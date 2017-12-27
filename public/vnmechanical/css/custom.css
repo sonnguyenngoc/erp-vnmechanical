@@ -1,5 +1,6 @@
 body, nav.navbar.bootsnav ul.nav > li > a,
-nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a {
+nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a, a,
+h1, h2, h3, h4, h5, h6, .my-Service-details-col h5 a {
     font-family: "Open Sans", sans-serif;
 }
 nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a:hover {
@@ -8,9 +9,89 @@ nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a:hover {
 nav.navbar.bootsnav.yellow ul.nav > li > a:hover,
 nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a:hover {
     border-top: none;
+    color: #41aaaa;
 }
 @media (min-width: 1024px) {
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
         width: 250px;
     }
+}
+.my-inner-heading-col p a.bread-back:before {
+    content: "\f105";
+    font-family: fontawesome;
+    color: #fff;
+    padding: 0 10px 0 5px;
+}
+nav.navbar.bootsnav.yellow ul.nav > li > a.active {
+    color: #41aaaa;
+    border-top: #41aaaa;
+}
+.my-header-nav .my-shopping-icon,
+.my-btn-yellow, .my-left-separator, .my-seratator-inside {
+    background: #41aaaa;
+}
+.my-header-top-content ul .my-quote a i,
+.my-faetures-box h4, .my-industrial-color,
+.my-section-title h2 span,
+.my-singup-filed-two h3 span,
+.my-blog-filed .my-blog-col .my-blog-heading h2,
+.my-blog-filed .my-blog-col p a, .my-blog-filed .my-blog-col .my-blog-bottom ul li a:hover,
+.my-copyright p a,
+.my-address-box h4 i, .my-service-icon a i,
+.my-processing h2 span {
+    color: #41aaaa;
+}
+.home-two .my-navigation-bgone,
+.home-two .my-navigation-bgtwo,
+.home-two .my-navigation-bgthree {
+    border: 6px solid #41aaaa;
+}
+.my-about-field-two .my-about-box-two .my-left-img-box,
+.my-footer-logo .my-footer-social li i {
+    border: 1px solid #41aaaa;
+}
+.my-img-hover .layer,
+.my-about-field-two .my-about-box-two:hover .my-left-img-box,
+#scrollUp,
+.my-about-field-three .my-layer-yellow:before,
+.my-section-title .my-title-line::after,
+.my-section-title .my-title-line,
+.my-section-title .my-title-line::before,
+.my-btn-yellow:hover, .my-team-name,
+.my-footer-logo .my-footer-social li i:hover,
+.my-flickr-img .my-layer,
+.my-technology-field,
+.my-service-item .my-service-title,
+.my-Service-details-col h5 a {
+    background: linear-gradient(to right,#50bebe 0,#41aaaa 50%,#0099cb 100%);
+}
+.my-footer-logo img {
+    height: auto;
+}
+.hexagon:before {
+    border-bottom: 48px solid #41aaaa;
+}
+.hexagon {
+    background-color: #41aaaa;
+}
+.hexagon:after {
+    border-top: 48px solid #41aaaa;
+}
+.my-single-item:hover .my-arrow {
+    border-right-color: #41aaaa;
+}
+.my-contact-field, .my-about-field, .my-service-details-field {
+    padding: 30px 0 20px;
+}
+.my-main-contact-from, .my-processing {
+    margin-top: 20px;
+}
+.my-address-box h4 {
+    font-size: 25px;
+}
+.my-header-top-content ul li {
+    margin-right: 50px;
+}
+.my-Service-details-col ul li:hover {
+    border-left-color: #41aaaa;
 }

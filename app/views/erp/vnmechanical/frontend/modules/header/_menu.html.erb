@@ -1,16 +1,16 @@
 <div class="collapse navbar-collapse my-container-three" id="navbar-menu">
     <ul class="nav navbar-nav navbar-left" data-in="fadeIn">
         <li><%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ', class: 'active' %></li>
-        <li><%= link_to 'Giới Thiệu', '', title: 'Giới Thiệu', class: '' %></li>
+        <li><%= link_to 'Giới Thiệu', erp_vnmechanical.about_us_path, title: 'Giới Thiệu', class: '' %></li>
         <li class="dropdown">
-            <%= link_to 'Dịch Vụ', '', class: 'dropdown-toggle', title: 'Dịch Vụ', data: {toggle: 'dropdown'} %>
+            <%= link_to 'Dịch Vụ', erp_vnmechanical.service_listing_path, class: 'dropdown-toggle', title: 'Dịch Vụ', data: {toggle: 'dropdown'} %>
             <ul class="dropdown-menu">
-                <li><%= link_to 'Tư Vấn', '', title: '' %></li>
-                <li><%= link_to 'Nâng Cấp', '', title: '' %></li>
-                <li><%= link_to 'Hỗ Trợ Kỹ Thuật', '', title: '' %></li>
-                <li><%= link_to 'Phụ Tùng Thay Thế', '', title: '' %></li>
-                <li><%= link_to 'Bảo Trì', '', title: '' %></li>
-                <li><%= link_to 'Lắp Đặt - Chạy Thử - Đào Tạo', '', title: '' %></li>
+                <li><%= link_to 'Tư Vấn', erp_vnmechanical.service_detail_path, title: '' %></li>
+                <li><%= link_to 'Nâng Cấp', erp_vnmechanical.service_detail_path, title: '' %></li>
+                <li><%= link_to 'Hỗ Trợ Kỹ Thuật', erp_vnmechanical.service_detail_path, title: '' %></li>
+                <li><%= link_to 'Phụ Tùng Thay Thế', erp_vnmechanical.service_detail_path, title: '' %></li>
+                <li><%= link_to 'Bảo Trì', erp_vnmechanical.service_detail_path, title: '' %></li>
+                <li><%= link_to 'Lắp Đặt - Chạy Thử - Đào Tạo', erp_vnmechanical.service_detail_path, title: '' %></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -30,7 +30,7 @@
         <li><%= link_to 'Tin Tức', '', title: 'Tin Tức', class: '' %></li>
         <li><%= link_to 'Hình Ảnh', '', title: 'Hình Ảnh', class: '' %></li>
         <li><%= link_to 'Tuyển Dụng', '', title: 'Tuyển Dụng', class: '' %></li>
-        <li><%= link_to 'Liên Hệ', '', title: 'Liên Hệ', class: '' %></li>
+        <li><%= link_to 'Liên Hệ', erp_vnmechanical.contact_us_path, title: 'Liên Hệ', class: '' %></li>
     </ul>
     <div class="my-shopping page-two pull-right">
         <a href="#"><span class="icon icon-ShoppingCart my-shopping-icon"></span></a>

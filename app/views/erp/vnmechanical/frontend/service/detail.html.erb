@@ -1,0 +1,75 @@
+<!-- Inner page heading start -->
+<section class="my-inner-heading-field my-inner-heading-three  my-layer-black">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-inner-heading-col">
+                    <h2>CHI TIẾT DỊCH VỤ</h2>
+                    <p>
+                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <%= link_to 'Dịch Vụ', erp_vnmechanical.service_listing_path, title: 'Dịch Vụ', class: 'bread-back' %>
+                        <%= link_to 'Chi Tiết Dịch Vụ', erp_vnmechanical.service_detail_path, title: 'Chi Tiết Dịch Vụ', class: 'bread-back' %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inner page heading end -->
+
+<!-- Service details start -->
+<section class="my-service-details-field">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="my-service-details-col">
+                    <div class="my-service-slider">
+                        <div class="owl-service-carousel">
+                            <div class="item">
+                                <img src="/vnmechanical/images/service/12.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="/vnmechanical/images/service/12.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-processing">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="my-service-details-col">
+                                    <h2>Agricultural <span>Processing</span></h2>
+                                    <p class="my-para-space">Nam volutpat, nulla et tempor imperdiet, sapien massa consequat orci, non ornare odio eros nec nunc. Aenean luctus tortor bibendum nisi maximus tempor. Aenean nec dolor ut eros commodo interdum eget quis lectus. Donec libero ipsum, lobortis eget ante vel, pretium molestie ligula. Proin suscipit, magna et sodales condimentum, massa ligula ullamcorper velit, ac tristique massa orci ut quam. Mauris sodales eros id augue iaculis, sit amet vulputate libero luctus.</p>
+                                    <p>Nam volutpat, nulla et tempor imperdiet, sapien massa consequat orci, non ornare odio eros nec nunc. Aenean luctus tortor bibendum nisi maximus tempor. Aenean nec dolor ut eros commodo interdum eget quis lectus. Donec libero ipsum, lobortis eget ante vel.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="my-service-details-col">
+                                    <div class="my-processing-img">
+                                        <img src="/vnmechanical/images/service/13.jpg" alt="">
+                                        <div class="my-processing-img-over">
+                                            <img src="/vnmechanical/images/service/14.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="my-Service-details-col">
+                    <ul>
+                        <li><%= link_to 'Tư Vấn', erp_vnmechanical.service_detail_path, title: '' %></li>
+                        <li><%= link_to 'Nâng Cấp', erp_vnmechanical.service_detail_path, title: '' %></li>
+                        <li><%= link_to 'Hỗ Trợ Kỹ Thuật', erp_vnmechanical.service_detail_path, title: '' %></li>
+                        <li><%= link_to 'Phụ Tùng Thay Thế', erp_vnmechanical.service_detail_path, title: '' %></li>
+                        <li><%= link_to 'Bảo Trì', erp_vnmechanical.service_detail_path, title: '' %></li>
+                        <li><%= link_to 'Lắp Đặt - Chạy Thử - Đào Tạo', erp_vnmechanical.service_detail_path, title: '' %></li>
+                    </ul>
+                    <h5><a href="#"><i class="icofont icofont-options"></i>Tải File Giới Thiệu</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service details end -->

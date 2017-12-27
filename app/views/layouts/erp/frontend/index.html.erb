@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<META NAME="robots" CONTENT="noindex, nofollow">
 	<!-- Favicon -->
 	<link href="/vnmechanical/images/favicon.png" rel="shortcut icon" type="image/png">
 	<link href="/vnmechanical/images/apple-icon.png" rel="icon" type="image/png">
@@ -42,43 +43,7 @@
 	<!-- Footer end -->
 
 	<!-- Script Start From Here -->
-	<%= render "erp/vnmechanical/frontend/modules/javascript_files" %>
-    
-    <% if params[:controller] == "erp/vnmechanical/frontend/home" && params[:action] == "index" %>
-	<!-- Funfact START -->
-	<script type="text/javascript">
-     $(document).ready(function($) {
-          $('.start-count').each(function() {
-                  var $this   = $(this);
-                  $this.data('target', parseInt($this.html()));
-                  $this.data('counted', false);
-                  $this.html('0');
-              });
-              
-              $(window).bind('scroll', function() {
-                  var speed   = 3000;
-                  $('.start-count').each(function() {
-                      var $this   = $(this);
-                      if(!$this.data('counted') && $(window).scrollTop() + $(window).height() >= $this.offset().top) {
-                          $this.data('counted', true);
-                          $this.animate({dummy: 1}, {
-                              duration: speed,
-                              step:     function(now) {
-                                  var $this   = $(this);
-                                  var val     = Math.round($this.data('target') * now);
-                                  $this.html(val);
-                                  if(0 < $this.parent('.value').length) {
-                                      $this.parent('.value').css('width', val + '%');
-                                  }
-                              }
-                          });
-                      }
-                  });
-              }).triggerHandler('scroll');
-      });
-	</script>
-    <% end %>
-    <!-- Script End From Here -->
+	<%= render "erp/vnmechanical/frontend/modules/javascript_files" %>    
 
 </body>
 </html>
