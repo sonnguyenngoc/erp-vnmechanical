@@ -1,0 +1,52 @@
+<!-- Inner page heading start -->
+<section class="my-inner-heading-field my-inner-heading-three  my-layer-black">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-inner-heading-col">
+                    <h2>Sản phẩm</h2>
+                    <p><a href="index.html">Trang chủ</a>
+                        <span>></span>
+                        <a href="#">Sản phẩm</a>
+                        <span>></span>
+                        <a href="#">Băng tải</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inner page heading end -->
+
+<!-- Shop start -->
+<section class="my-shop-field">
+    <div class="container">
+        <div class="row animatedParent animateOnce">
+          <% (1..8).each do |product| %>
+            <div class="col-md-4 col-sm-6">
+                <div class="my-shop-col animated fadeInUpShort slow delay-250">
+                    <div class="my-shop-item">
+                        <img src="/vnmechanical/images/shop/bang-tai-1.jpg" alt="">
+                        <div class="my-shop-layer-arrow" style="border-top: 60px solid #00bcd5;">
+                          <p style="color: #fff">sale</p></div>
+                        <div class="my-shop-layer">
+                            <a class="lightbox-image" href="/vnmechanical/images/shop/bang-tai-1.jpg"><i class="icofont icofont-search-alt-1"></i></a>
+                            <a href="#"><i class="icofont icofont-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="my-shop-bottom">
+                        <h3>Băng tải cong</h3>
+                        <h4 style="font-family: sans-serif;color: #00bcd5;"> 15.000.000₫</h4>
+                        <div class="my-add-btn" style="background: #00bcd5;">
+                            <a href="#">
+                                thêm giỏ hàng
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</section>
+<!-- Shop end -->
