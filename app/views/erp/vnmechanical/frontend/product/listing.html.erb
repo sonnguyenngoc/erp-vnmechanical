@@ -5,11 +5,9 @@
             <div class="col-md-12">
                 <div class="my-inner-heading-col">
                     <h2>Sản phẩm</h2>
-                    <p><a href="index.html">Trang chủ</a>
-                        <span>></span>
-                        <a href="#">Sản phẩm</a>
-                        <span>></span>
-                        <a href="#">Băng tải</a>
+                    <p>
+                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <%= link_to 'Băng Tải', erp_vnmechanical.product_listing_path, title: 'Băng Tải', class: 'bread-back' %>
                     </p>
                 </div>
             </div>
