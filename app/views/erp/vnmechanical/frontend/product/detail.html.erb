@@ -1,2 +1,149 @@
-<h1>Product#detail</h1>
-<p>Find me in app/views/erp/vnmechanical/product/detail.html.erb</p>
+<!-- Inner page heading start -->
+<section class="my-inner-heading-field my-inner-heading-three  my-layer-black">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-inner-heading-col">
+                    <h2>Băng Tải Cong</h2>
+                    <p>
+                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <%= link_to 'Băng Tải', erp_vnmechanical.product_listing_path, title: 'Băng Tải', class: 'bread-back' %>
+                        <%= link_to 'Băng Tải Cong  ', erp_vnmechanical.product_detail_path, title: 'Băng Tải Cong', class: 'bread-back' %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inner page heading end -->
+
+<!-- Shop single start -->
+<section class="my-shop-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="my-shop-single-col">
+                    <%= link_to image_tag('/vnmechanical/images/shop/bang-tai-cong-01.jpg', alt: ''),
+                        '/vnmechanical/images/shop/bang-tai-cong-01.jpg',
+                        title: '', class: 'lightbox-image' %>
+                    <div class="my-popup-img clearfix">
+                        <ul>
+                            <% (0..4).each do |image| %>
+                                <li>
+                                    <%= link_to image_tag('/vnmechanical/images/shop/bang-tai-cong-01.jpg', alt: ''),
+                                                '/vnmechanical/images/shop/bang-tai-cong-01.jpg',
+                                                title: '', class: 'lightbox-image' %>
+                                </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="my-shop-single-col">
+                    <div class="my-shop-details">
+                        <h1>Băng Tải Cong</h1>
+                        <h4 class="my-price"><del>20.00$</del> 12.00$</h4>
+                        <p>
+                            <strong>Chủng loại: </strong> Băng tải<br>
+                            <strong>Chủng loại: </strong> Băng tải<br>
+                            <strong>Chủng loại: </strong> Băng tải<br>
+                            <strong>Chủng loại: </strong> Băng tải<br>
+                            <strong>Chủng loại: </strong> Băng tải<br>
+                            <strong>Chủng loại: </strong> Băng tải<br>
+                        </p>
+                        <strong>Bảo hành: </strong> 1 năm<br>
+                    </div>
+                    <div class="my-order-details">
+                        <h6>
+                            Đang kinh doanh
+                            <button class="btn btn-default my-btn-yellow" type="submit">Thêm Vào Giỏ Hàng</button>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-tab-row">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Nhãn sản phẩm</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                            <h4>TỐNG QUAN VÀ ĐẶC TÍNH CÔNG NGHỆ</h4>
+                            <p>Luôn đảm bảo chất lượng hàng đâu, giá thành hợp lý, tính thẩm mỹ cao, hậu mãi tốt cùng khả năng làm việc tuyệt vời, tiết kiệm năng lương. Băng tải của VNMechanical được khách hàng sử dụng rộng rãi trong các lĩnh vực như y tế, thực phẩm, điện tử, giải khát, …., băng tải VNMechanical là sự lựa chọn hàng đầu của quý khách hàng. Một số đặc tính công nghệ của băng tải:</p>
+                            <ul>
+                                <li><span>Độ bền kéo tốt, tuổi thọ dài , không bị dãn trong quá trình hoạt động.</span></li>
+                                <li><span>Bề mặt dây chống nước chịu nhiệt từ (-10°C – 90°C) có thể chịu được nhiệt độ 110° C trong một thời gian nhất định</span></li>
+                                <li><span>Hệ số dãn dây nhỏ, khả năng kháng tĩnh điện.</span></li>
+                                <li><span>Khả năng chống thấm hơi ẩm, axit, dầu, khí, ánh sáng mặt trời.</span></li>
+                                <li><span>Khả năng chống rách, bong tróc và tác động trọng lượng dây nhẹ, linh hoạt …</span></li>
+                                <li><span>Băng tải PVC/PU (Mặt trên trơn láng hoặc carô – mặt dưới là lớp bố dệt), có độ dày 1mm, 2mm, 3mm, 4,5mm và 5mm.</span></li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="messages">
+                            <div class="my-tags clearfix">
+                                <ul>
+                                    <li><a href="#">băng tải</a></li>
+                                    <li><a href="#">băng tải pvc</a></li>
+                                    <li><a href="#">băng tải pu</a></li>
+                                    <li><a href="#">băng tải cong</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop single end -->
+
+<!-- Shop start -->
+<section class="my-shop-field">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="my-section-title">
+                    <h2>Sản Phẩm <span>Liên Quan</span></h2>
+                    <div class="my-title-line"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row animatedParent animateOnce">
+          <% (1..3).each do |product| %>
+            <div class="col-md-4 col-sm-6">
+                <div class="my-shop-col animated fadeInUpShort slow delay-250">
+                    <div class="my-shop-item">
+                        <%= image_tag '/vnmechanical/images/shop/bang-tai-1.jpg', alt: '' %>
+                        <div class="my-shop-layer-arrow" style="border-top: 60px solid #00bcd5;">
+                            <p style="color: #fff">sale</p>
+                        </div>
+                        <div class="my-shop-layer">
+                            <%= link_to '<i class="icofont icofont-search-alt-1"></i>'.html_safe,
+                                        '/vnmechanical/images/shop/bang-tai-1.jpg', title: 'Tên Sản Phẩm',
+                                        class: 'lightbox-image' %>
+                            <%= link_to '<i class="icofont icofont-calculations"></i>'.html_safe,
+                                        erp_vnmechanical.product_detail_path, title: 'Xem Chi Tiết' %>
+                        </div>
+                    </div>
+                    <div class="my-shop-bottom">
+                        <h3><%= link_to 'Băng Tải Cong', erp_vnmechanical.product_detail_path, title: '' %></h3>
+                        <h4 style="font-family: sans-serif;color: #00bcd5;"> 15.000.000₫</h4>
+                        <div class="my-add-btn" style="background: #00bcd5;">
+                            <a href="#">
+                                THÊM VÀO GIỎ HÀNG
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</section>
+<!-- Shop end -->

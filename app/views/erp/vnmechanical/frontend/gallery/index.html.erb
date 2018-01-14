@@ -1,2 +1,95 @@
-<h1>Gallery#index</h1>
-<p>Find me in app/views/erp/vnmechanical/gallery/index.html.erb</p>
+<!-- Inner page heading start -->
+<section class="my-inner-heading-field my-inner-heading-three  my-layer-black">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-inner-heading-col">
+                    <h2>Hình Ảnh</h2>
+                    <p>
+                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <%= link_to 'Hình Ảnh', erp_vnmechanical.product_listing_path, title: 'Hình Ảnh', class: 'bread-back' %>
+                    </p>                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inner page heading end -->
+
+<!-- Project title start -->
+<section class="my-project-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Masonry Filter -->
+                <ul class="list-inline masonry-filter text-center">
+                    <li><a href="#" class="active" data-filter="*"><span>Xem tất cả</span></a></li>
+                    <li><a href="#html" data-filter=".html" class=""><span>Materials</span></a></li>
+                    <li><a href="#css" data-filter=".css" class=""><span>Mechanical</span></a></li>
+                    <li><a href="#javascript" data-filter=".javascript" class=""><span>Power & Energy</span></a></li>
+                    <li><a href="#jquery" data-filter=".jquery" class=""><span>Chemical</span></a></li>
+                    <li><a href="#php" data-filter=".php" class=""><span>Company</span></a></li>
+                </ul>
+                <!-- End Masonry Filter -->
+                <!-- Masonry Grid -->
+                <div id="grid" class="masonry-gallery grid-three-item my-gutter clearfix" style="position: relative; height: 864px;">
+                    <!-- Masonry Item -->
+                    <div class="isotope-item php">
+                        <div class="my-title-item">
+                            <a class="lightbox-image" href="/vnmechanical/images/shop/bang-tai-cong.jpg" data-fancybox-group="gallery" title="Gallery Photos">
+			                		<img src="/vnmechanical/images/shop/bang-tai-cong.jpg" alt="">
+			                	</a>
+                            <p>Materials</p>
+                        </div>
+                    </div>
+                    <!-- Masonry Item -->
+                    <div class="isotope-item php css">
+                        <div class="my-title-item">
+                            <a class="lightbox-image" href="/vnmechanical/images/shop/bang-tai-cong.jpg" data-fancybox-group="gallery" title="Gallery Photos">
+			                		<img src="/vnmechanical/images/shop/bang-tai-cong.jpg" alt="">
+			                	</a>
+                            <p>Materials</p>
+                        </div>
+                    </div>
+                    <!-- Masonry Item -->
+                    <div class="isotope-item javascript html">
+                        <div class="my-title-item">
+                            <a class="lightbox-image" href="/vnmechanical/images/shop/bang-tai-cong.jpg" data-fancybox-group="gallery" title="Gallery Photos">
+			                		<img src="/vnmechanical/images/shop/bang-tai-cong.jpg" alt="">
+			                	</a>
+                            <p>Materials</p>
+                        </div>
+                    </div>
+                    <!-- Masonry Item -->
+                    <div class="isotope-item jQuery html css">
+                        <div class="my-title-item">
+                            <a class="lightbox-image" href="/vnmechanical/images/shop/bang-tai-cong.jpg" data-fancybox-group="gallery" title="Gallery Photos">
+			                		<img src="/vnmechanical/images/shop/bang-tai-cong.jpg" alt="">
+			                	</a>
+                            <p>Materials</p>
+                        </div>
+                    </div>
+                    <!-- Masonry Item -->
+                    <div class="isotope-item php css">
+                        <div class="my-title-item">
+                            <a class="lightbox-image" href="/vnmechanical/images/shop/bang-tai-cong.jpg" data-fancybox-group="gallery" title="Gallery Photos">
+			                		<img src="/vnmechanical/images/shop/bang-tai-cong.jpg" alt="">
+			                	</a>
+                            <p>Materials</p>
+                        </div>
+                    </div>
+                    <!-- Masonry Item -->
+                    <div class="isotope-item javascript css jquery">
+                        <div class="my-title-item">
+                            <a class="lightbox-image" href="/vnmechanical/images/shop/bang-tai-cong.jpg" data-fancybox-group="gallery" title="Gallery Photos">
+			                		<img src="/vnmechanical/images/shop/bang-tai-cong.jpg" alt="">
+			                	</a>
+                            <p>Materials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Project title end -->

@@ -1,6 +1,7 @@
 body, nav.navbar.bootsnav ul.nav > li > a,
 nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a, a,
-h1, h2, h3, h4, h5, h6, .my-Service-details-col h5 a {
+h1, h2, h3, h4, h5, h6, .my-Service-details-col h5 a,
+.my-blog-filed .my-blog-col .my-blog-heading h2 {
     font-family: "Open Sans", sans-serif;
 }
 nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a:hover {
@@ -98,6 +99,34 @@ nav.navbar.bootsnav.yellow ul.nav > li > a.active {
 .my-features-field {
     padding: 80px 0px 20px;
 }
-.my-shop-field {
+.my-shop-field, .my-shop-single, .my-project-title, .my-blog-filed {
     padding: 30px 0 20px;
+}
+.my-shop-bottom h4, .my-section-title, .list-inline {
+    margin-bottom: 10px;
+}
+.my-shop-bottom h3 {
+    margin-top: 10px;
+}
+.tab-content #home, .my-blog-filed .my-blog-col p {
+    text-align: justify;
+}
+.tab-content #home ul li {
+    list-style-type: circle;
+    margin-left: 15px;
+}
+.my-shop-details p {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.my-popup-img ul li {
+    margin-right: 26px;
+}
+.my-popup-img ul li:last-child {
+    margin-right: 0;
+}
+.my-blog-filed .my-blog-col .my-blog-heading h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
