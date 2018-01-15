@@ -4,11 +4,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="my-inner-heading-col">
-                    <h2>Băng Tải Cong</h2>
+                    <h2><%= @product.product_name %></h2>
                     <p>
-                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
-                        <%= link_to 'Băng Tải', erp_vnmechanical.product_listing_path, title: 'Băng Tải', class: 'bread-back' %>
-                        <%= link_to 'Băng Tải Cong  ', erp_vnmechanical.product_detail_path, title: 'Băng Tải Cong', class: 'bread-back' %>
+                        <%= link_to '<i class="fa fa-home"></i>'.html_safe, erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <% if !@menu.nil? %>
+                            <% @menu.self_and_parent_menus.each do |menu| %>
+                                <%= link_to menu.name, menu_link(menu), class: 'bread-back' %>
+                            <% end %>
+                        <% end %>
+                        <span class='bread-back'><%= @product.product_name %></span>
                     </p>
                 </div>
             </div>
@@ -42,15 +46,17 @@
             <div class="col-md-6">
                 <div class="my-shop-single-col">
                     <div class="my-shop-details">
-                        <h1>Băng Tải Cong</h1>
-                        <h4 class="my-price"><del>20.00$</del> 12.00$</h4>
+                        <h2><%= @product.product_name %></h2>
+                        <h4 style="font-family: sans-serif;color: #00bcd5;" class="my-price">
+                            <del></del>
+                            Liên hệ: (+84-9) 4774 8895</h4>
                         <p>
+                            <strong>Xuất xứ: </strong> Việt Nam<br>
+                            <strong>Số model: </strong> <%= @product.code %><br>
+                            <!--<strong>Chủng loại: </strong> Băng tải<br>
                             <strong>Chủng loại: </strong> Băng tải<br>
                             <strong>Chủng loại: </strong> Băng tải<br>
-                            <strong>Chủng loại: </strong> Băng tải<br>
-                            <strong>Chủng loại: </strong> Băng tải<br>
-                            <strong>Chủng loại: </strong> Băng tải<br>
-                            <strong>Chủng loại: </strong> Băng tải<br>
+                            <strong>Chủng loại: </strong> Băng tải<br>-->
                         </p>
                         <strong>Bảo hành: </strong> 1 năm<br>
                     </div>

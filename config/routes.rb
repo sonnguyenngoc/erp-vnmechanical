@@ -7,8 +7,8 @@ Erp::Vnmechanical::Engine.routes.draw do
   get "gioi-thieu.html" => "frontend/information#about_us", as: :about_us
   get "lien-he.html" => "frontend/information#contact_us", as: :contact_us
   
-  get "san-pham/chuyen-muc.html" => "frontend/product#listing", as: :product_listing
-  get "san-pham/chuyen-muc/chi-tiet.html" => "frontend/product#detail", as: :product_detail
+  get "chuyen-muc(/:menu_id)(/:title).html" => "frontend/product#listing", as: :product_listing
+  get "san-pham(/:product_id)(/:title).html" => "frontend/product#detail", as: :product_detail
   
   get "gio-hang.html" => "frontend/shopping#cart", as: :shopping_cart
   get "dat-hang.html" => "frontend/shopping#checkout", as: :shopping_checkout

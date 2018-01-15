@@ -16,15 +16,9 @@
         <li class="dropdown">
             <%= link_to 'Sản Phẩm', erp_vnmechanical.product_listing_path, class: 'dropdown-toggle', title: 'Sản Phẩm', data: {toggle: 'dropdown'} %>
             <ul class="dropdown-menu">
-                <li><%= link_to 'Băng Tải', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Máy Chiết Rót', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Máy Nông Nghiệp', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Máy Đóng Gói Cân Điện Tử', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Phụ Kiện Máy Đóng Gói', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Máy Đóng Gói Dạng Lỏng', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Máy Đóng Gói Dạng Bột - Hạt', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Máy Dán Miệng Ly', erp_vnmechanical.product_listing_path, title: '' %></li>
-                <li><%= link_to 'Máy Đóng Gói Dạng Nằm', erp_vnmechanical.product_listing_path, title: '' %></li>
+                <% Erp::Menus::Menu.get_menus.get_active.each do |menu| %>
+                    <li><%= link_to menu.name, menu_link(menu) %></li>
+                <% end %>
             </ul>
         </li>
         <li><%= link_to 'Tin Tức', erp_vnmechanical.blog_listing_path, title: 'Tin Tức', class: '' %></li>

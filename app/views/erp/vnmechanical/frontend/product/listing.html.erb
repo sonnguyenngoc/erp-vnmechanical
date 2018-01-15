@@ -4,10 +4,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="my-inner-heading-col">
-                    <h2>BĂNG TẢI</h2>
+                    <h2><%= @menu.name %></h2>
                     <p>
-                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
-                        <%= link_to 'Băng Tải', erp_vnmechanical.product_listing_path, title: 'Băng Tải', class: 'bread-back' %>
+                        <%= link_to '<i class="fa fa-home"></i>'.html_safe, erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <% @menu.self_and_parent_menus.each do |menu| %>
+                            <% if @menu.id != menu.id %>
+                                <%= link_to menu.name, menu_link(menu), class: 'bread-back' %>
+                            <% end %>
+                        <% end %>
+                        <span class='bread-back'><%= @menu.name %></span>
                     </p>
                 </div>
             </div>
@@ -20,34 +25,40 @@
 <section class="my-shop-field">
     <div class="container">
         <div class="row animatedParent animateOnce">
-          <% (1..8).each do |product| %>
-            <div class="col-md-4 col-sm-6">
-                <div class="my-shop-col animated fadeInUpShort slow delay-250">
-                    <div class="my-shop-item">
-                        <%= image_tag '/vnmechanical/images/shop/bang-tai-1.jpg', alt: '' %>
-                        <div class="my-shop-layer-arrow" style="border-top: 60px solid #00bcd5;">
-                            <p style="color: #fff">sale</p>
-                        </div>
-                        <div class="my-shop-layer">
-                            <%= link_to '<i class="icofont icofont-search-alt-1"></i>'.html_safe,
-                                        '/vnmechanical/images/shop/bang-tai-1.jpg', title: 'Tên Sản Phẩm',
-                                        class: 'lightbox-image' %>
-                            <%= link_to '<i class="icofont icofont-calculations"></i>'.html_safe,
-                                        erp_vnmechanical.product_detail_path, title: 'Xem Chi Tiết' %>
+            <% if @products.count > 0 %>
+                <% @products.each do |product| %>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="my-shop-col animated fadeInUpShort slow delay-250">
+                            <div class="my-shop-item">
+                                <%= image_tag '/vnmechanical/images/shop/bang-tai-1.jpg', alt: '' %>
+                                <div class="my-shop-layer-arrow" style="border-top: 60px solid #00bcd5;">
+                                    <p style="color: #fff">sale</p>
+                                </div>
+                                <div class="my-shop-layer">
+                                    <%= link_to '<i class="icofont icofont-search-alt-1"></i>'.html_safe,
+                                                '/vnmechanical/images/shop/bang-tai-1.jpg', title: 'Tên Sản Phẩm',
+                                                class: 'lightbox-image' %>
+                                    <%= link_to '<i class="icofont icofont-calculations"></i>'.html_safe,
+                                                erp_vnmechanical.product_detail_path, title: 'Xem Chi Tiết' %>
+                                </div>
+                            </div>
+                            <div class="my-shop-bottom">
+                                <h3><%= link_to product.product_name, product_link(product), title: product.product_name %></h3>
+                                <h4 style="font-family: sans-serif;color: #00bcd5;"> Call: 094 774 8895</h4>
+                                <div class="my-add-btn" style="background: #00bcd5;">
+                                    <a href="#">
+                                        THÊM VÀO GIỎ HÀNG
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="my-shop-bottom">
-                        <h3><%= link_to 'Băng Tải Cong', erp_vnmechanical.product_detail_path, title: '' %></h3>
-                        <h4 style="font-family: sans-serif;color: #00bcd5;"> 15.000.000₫</h4>
-                        <div class="my-add-btn" style="background: #00bcd5;">
-                            <a href="#">
-                                THÊM VÀO GIỎ HÀNG
-                            </a>
-                        </div>
-                    </div>
+                <% end %>
+            <% else %>
+                <div class="alert alert-warning">
+                    <i class="fa fa-warning"></i> Hiện chưa có sản phẩm cho chuyên mục này.
                 </div>
-            </div>
-          <% end %>
+            <% end %>
         </div>
     </div>
 </section>

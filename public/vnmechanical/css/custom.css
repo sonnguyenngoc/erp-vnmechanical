@@ -17,7 +17,7 @@ nav.navbar.bootsnav.yellow li.dropdown ul.dropdown-menu > li > a:hover {
         width: 250px;
     }
 }
-.my-inner-heading-col p a.bread-back:before {
+.my-inner-heading-col p a.bread-back:before, .my-inner-heading-col p span.bread-back:before {
     content: "\f105";
     font-family: fontawesome;
     color: #fff;
@@ -129,4 +129,8 @@ nav.navbar.bootsnav.yellow ul.nav > li > a.active {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.my-inner-heading-field .my-inner-heading-col p span.bread-back {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
