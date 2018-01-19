@@ -20,19 +20,35 @@
 <section class="my-blog-filed">
     <div class="container">
         <div class="row animatedParent animateOnce">
-            <% (0..5).each do |blog| %>
-            <div class="col-md-4">
-                <div class="my-blog-col animated fadeInUpShort slow delay-250">
-                    <div class="my-blog-image">
-                        <%= image_tag '/vnmechanical/images/blog/1.jpg', alt: '' %>
+            <% if @blogs.count > 0 %>
+                <% @blogs.each do |blog| %>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="my-blog-col animated fadeInUpShort slow delay-250">
+                                <div class="my-blog-image">
+                                    <%= image_tag blog.image.medium, alt: blog.name %>
+                                </div>
+                                <div class="my-blog-heading">
+                                    <h2><%= link_to blog.name, article_link(blog), title: '' %></h2>
+                                </div>
+                                <p><%= short_text(blog.content, 30) %> <a href="<%= article_link(blog) %>">[...]</a></p>
+                                <div class="my-blog-bottom clearfix">
+                                    <ul>
+                                        <li><i class="fa fa-clock-o"></i> <%= relative_time(blog.created_at) %></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="my-blog-heading">
-                        <h2>14-01-2018</h2>
-                        <h3><%= link_to 'Tiêu đề bài viết', erp_vnmechanical.blog_detail_path, title: '' %></h3>
-                    </div>
-                    <p>velit aliquam rhoncus vestibulum sed purus. Sed scelerisque rutrum eleifend. Nunc sem sem, accumsan at pulvinar in, pulvinar ut orci. Nunc nec accumsan tellus. Integer vel luctus urna. <a href="#">[.....]</a></p>
+                <% end %>
+                <div class="pagination-vnmechanical">
+                    <%= erp_datalist_pagination(@blogs) %>
                 </div>
-            </div>
+            <% else %>
+                <div class="alert alert-warning">
+                    <i class="fa fa-warning"></i> Hiện chưa có bài viết cho mục này.
+                </div>
             <% end %>
         </div>
     </div>

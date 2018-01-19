@@ -128,9 +128,27 @@ nav.navbar.bootsnav.yellow ul.nav > li > a.active {
 .my-blog-filed .my-blog-col .my-blog-heading h2 {
     font-size: 20px;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    text-transform: none;
+    text-align: justify;
 }
 .my-inner-heading-field .my-inner-heading-col p span.bread-back {
     padding-left: 0px !important;
     padding-right: 0px !important;
+}
+.my-blog-filed .my-blog-col .my-blog-bottom {
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.my-blog-filed .my-blog-col .my-blog-bottom ul li {
+    font-size: 11px;
+    line-height: 11px;
+}
+.my-blog-filed .my-blog-col .my-blog-bottom ul li i {
+    font-size: 11px;
+    margin-right: 5px;
+}
+nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a.active {
+    color: #41aaaa;
+    border-top: #41aaaa;
 }

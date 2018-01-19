@@ -5,19 +5,21 @@
         <li class="dropdown">
             <%= link_to 'Dịch Vụ', erp_vnmechanical.service_listing_path, class: 'dropdown-toggle', title: 'Dịch Vụ', data: {toggle: 'dropdown'} %>
             <ul class="dropdown-menu">
-                <li><%= link_to 'Tư Vấn', erp_vnmechanical.service_detail_path, title: '' %></li>
-                <li><%= link_to 'Nâng Cấp', erp_vnmechanical.service_detail_path, title: '' %></li>
-                <li><%= link_to 'Hỗ Trợ Kỹ Thuật', erp_vnmechanical.service_detail_path, title: '' %></li>
-                <li><%= link_to 'Phụ Tùng Thay Thế', erp_vnmechanical.service_detail_path, title: '' %></li>
-                <li><%= link_to 'Bảo Trì', erp_vnmechanical.service_detail_path, title: '' %></li>
-                <li><%= link_to 'Lắp Đặt - Chạy Thử - Đào Tạo', erp_vnmechanical.service_detail_path, title: '' %></li>
+                <% Erp::Articles::Category.where(alias: Erp::Articles::Category::ALIAS_SERVICE).each do |menu| %>
+                    <% service = Erp::Articles::Article.find_by_category_id(menu.id) %>
+                    <li>
+                        <%= link_to menu.name, (service.nil? ? 'javascript:;' : service_link(service)),
+                            class: "#{'active' if !service.nil? and (service.id == params[:service_id].to_i)}" %>
+                    </li>
+                <% end %>
             </ul>
         </li>
         <li class="dropdown">
             <%= link_to 'Sản Phẩm', erp_vnmechanical.product_listing_path, class: 'dropdown-toggle', title: 'Sản Phẩm', data: {toggle: 'dropdown'} %>
             <ul class="dropdown-menu">
                 <% Erp::Menus::Menu.get_menus.get_active.each do |menu| %>
-                    <li><%= link_to menu.name, menu_link(menu) %></li>
+                    <li><%= link_to menu.name, menu_link(menu),
+                            class: "#{'active' if menu.id == params[:menu_id].to_i}" %></li>
                 <% end %>
             </ul>
         </li>
