@@ -152,3 +152,17 @@ nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a.active {
     color: #41aaaa;
     border-top: #41aaaa;
 }
+@media only screen and (min-width: 768px) {
+    .cd-slider-nav {
+        height: 50px;
+    }
+}
+.my-header-top-content, .my-header-top-content:after, nav.navbar.bootsnav.my-menu-style-two #navbar-menu {
+    background: rgba(10, 10, 10, 0.5);
+}
+.my-header-top-content:before {
+    border-bottom: 60px solid rgba(10, 10, 10, 0.5);
+}
+/*.my-main-header-two .scroll-to-fixed-fixed {
+    background: rgba(10, 10, 10, 0.5);
+}*/

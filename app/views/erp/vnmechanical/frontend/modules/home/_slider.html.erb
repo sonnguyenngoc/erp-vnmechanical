@@ -2,31 +2,42 @@
     <div class="container-fluid">
         <div class="cd-hero home-two">
             <ul class="cd-hero-slider autoplay">
-                <li class="selected">
-                    <div class="cd-full-width my-big-font style2 my-slider-title">
-                        <h2>Renewable Energy <br> <span> Realization</span></h2>
-                    </div> <!-- .cd-full-width -->
-                </li>
-                <li class="my-gradient">
-                    <div class="cd-full-width text-left my-big-font">
-                        <h2>Corporatization is the <span class="my-industrial-color"> descendant</span></h2>
-                    </div> <!-- .cd-full-width -->
-                </li>
-                <li class="my-gradient-dark">
-                    <div class="cd-full-width big-font style3 my-slider-title-three">
-                        <h3>we are industrial</h3>
-                        <h2>we provide industrial <br> solution to your business</h2>
-                    </div> <!-- .cd-full-width -->
-                </li>
+                <!--<li class="selected">-->
+                <!--    <div class="cd-full-width my-big-font style2 my-slider-title">-->
+                <!--        <h2>Renewable Energy <br> <span> Realization</span></h2>-->
+                <!--    </div> <!-- .cd-full-width -->
+                <!--</li>-->
+                <!--<li class="my-gradient">--><!--my-gradient-dark-->
+                <!--    <div class="cd-full-width text-left my-big-font">-->
+                <!--        <h2>Corporatization is the <span class="my-industrial-color"> descendant</span></h2>-->
+                <!--    </div> <!-- .cd-full-width -->
+                <!--</li>-->
+                <% @sliders.each_with_index do |slider,index| %>
+                    <li class="<%= 'selected' if index == 0 %> my-gradient"
+                        style="background-image: url(<%= slider.image_url %>) !important;"
+                    >
+                        <div class="cd-full-width big-font style3 my-slider-title-three">
+                            <h3>we are industrial</h3>
+                            <h2>we provide industrial <br> solution to your business</h2>
+                        </div> <!-- .cd-full-width -->
+                    </li>
+                <% end %>
             </ul> <!-- .cd-hero-slider -->
 
             <div class="cd-slider-nav">
                 <nav>
                     <span class="cd-marker item-1"></span>				
                     <ul>
-                        <li class="selected"><a class="my-navigation-bgone" href="#0"></a></li>
-                        <li><a class="my-navigation-bgtwo" href="#0"></a></li>
-                        <li><a class="my-navigation-bgthree" href="#0"></a></li>
+                        <% @sliders.each_with_index do |slider,index| %>
+                            <li class="<%= 'selected' if index == 0 %>">
+                                <a class="my-navigation-bgone" href="#0"
+                                    style="background-image: url(<%= slider.image_url %>) !important;"
+                                ></a>
+                            </li>
+                        <% end %>
+                        <!--<li class="selected"><a class="my-navigation-bgone" href="#0"></a></li>-->
+                        <!--<li><a class="my-navigation-bgtwo" href="#0"></a></li>-->
+                        <!--<li><a class="my-navigation-bgthree" href="#0"></a></li>-->
                     </ul>
                 </nav> 
             </div> <!-- .cd-slider-nav -->
