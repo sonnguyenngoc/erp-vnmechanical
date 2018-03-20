@@ -21,22 +21,24 @@
 </section>
 <!-- Inner page heading end -->
 
+<% product_images = @product.product_images %>
+
 <!-- Shop single start -->
 <section class="my-shop-single">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="my-shop-single-col">
-                    <%= link_to image_tag('/vnmechanical/images/shop/bang-tai-cong-01.jpg', alt: ''),
-                        '/vnmechanical/images/shop/bang-tai-cong-01.jpg',
+                    <%= link_to image_tag(@product.main_image.image_url.thumb650, alt: @product.product_name),
+                        @product.main_image.image_url.thumb650.url,
                         title: '', class: 'lightbox-image' %>
                     <div class="my-popup-img clearfix">
                         <ul>
-                            <% (0..4).each do |image| %>
+                            <% product_images.each_with_index do |image,index| %>
                                 <li>
-                                    <%= link_to image_tag('/vnmechanical/images/shop/bang-tai-cong-01.jpg', alt: ''),
-                                                '/vnmechanical/images/shop/bang-tai-cong-01.jpg',
-                                                title: '', class: 'lightbox-image' %>
+                                    <%= link_to image_tag(image.image_url.thumb170, alt: ''),
+                                                image.image_url.thumb170.url,
+                                                title: @product.product_name, class: 'lightbox-image' %>
                                 </li>
                             <% end %>
                         </ul>
@@ -121,7 +123,7 @@
             </div>
         </div>
         <div class="row animatedParent animateOnce">
-          <% (1..3).each do |product| %>
+          <% @product.get_related_products.each do |product| %>
             <div class="col-md-4 col-sm-6">
                 <div class="my-shop-col animated fadeInUpShort slow delay-250">
                     <div class="my-shop-item">

@@ -1,25 +1,27 @@
+<% if !Erp::Contacts::Contact.all.empty? %>
+<% contact = Erp::Contacts::Contact.get_main_contact %>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="my-header-top-col my-text-center">
                 <div class="my-header-top-content pull-right clearfix">
                     <ul>
-                        <!--<li>-->
-                        <!--    <p>-->
-                        <!--        <i class="fa fa-map-marker" aria-hidden="true"></i>-->
-                        <!--        Quận Gò Vấp, Thành phố Hồ Chí Minh-->
-                        <!--    </p>-->
-                        <!--</li>-->
+                        <li>
+                            <p>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <%= display_contact_address(contact) %>
+                            </p>
+                        </li>
                         <li>
                             <p>
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                (+84-9) 4774 8895
+                                <%= contact.phone %>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                info@vnmechanical.com
+                                <%= contact.email %>
                             </p>
                         </li>
                     </ul>
@@ -28,3 +30,4 @@
         </div>
     </div>
 </div>
+<% end %>

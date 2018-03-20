@@ -15,7 +15,7 @@
             </ul>
         </li>
         <li class="dropdown">
-            <%= link_to 'Sản Phẩm', erp_vnmechanical.product_listing_path, class: 'dropdown-toggle', title: 'Sản Phẩm', data: {toggle: 'dropdown'} %>
+            <%= link_to 'Sản Phẩm', 'javascript:;', class: 'dropdown-toggle', title: 'Sản Phẩm', data: {toggle: 'dropdown'} %>
             <ul class="dropdown-menu">
                 <% Erp::Menus::Menu.get_menus.get_active.each do |menu| %>
                     <li><%= link_to menu.name, menu_link(menu),
