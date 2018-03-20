@@ -166,3 +166,39 @@ nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a.active {
 /*.my-main-header-two .scroll-to-fixed-fixed {
     background: rgba(10, 10, 10, 0.5);
 }*/
+.my-blog-title {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: #41aaaa;
+}
+.my-sidebar-title.fix {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.my-blog-col .my-post {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.my-post .my-post-item h5 {
+    padding-top: 0;
+    text-transform: initial;
+    text-align: justify;
+    margin-bottom: 5px;
+}
+.my-post .my-post-item h5 a {
+    color: #0a0a0a;
+}
+.my-post .my-post-item span {
+    font-family: sans-serif;
+    color: #af9a7d;
+    font-size: 13px;
+    text-transform: initial;
+}
+.my-post .my-post-item {
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.my-Service-details-col ul li.active {
+    border-left-color: #41aaaa;
+}

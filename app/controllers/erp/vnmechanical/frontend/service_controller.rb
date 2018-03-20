@@ -8,6 +8,7 @@ module Erp
         
         def detail
           @service = Erp::Articles::Article.find(params[:service_id])
+          @categories = Erp::Articles::Category.where(alias: Erp::Articles::Category::ALIAS_SERVICE)
           @meta_keywords = @service.meta_keywords
           @meta_description = @service.meta_description
         end

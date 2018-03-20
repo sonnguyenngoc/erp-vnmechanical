@@ -1,2 +1,57 @@
-<h1>Blog#detail</h1>
-<p>Find me in app/views/erp/vnmechanical/blog/detail.html.erb</p>
+<!-- Inner page heading start -->
+	<section class="my-inner-heading-field my-inner-heading-three  my-layer-black">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="my-inner-heading-col">
+                    <h2><%= 'Chi tiết bài viết' %></h2>
+                    <p>
+                        <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
+                        <%= link_to 'Tin Tức', erp_vnmechanical.blog_listing_path, title: 'Tin Tức', class: 'bread-back' %>
+                        <span class='bread-back'><%= @blog.name %></span>
+                    </p>
+                </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Inner page heading end -->
+
+	<!-- Blog start -->
+	<section class="my-blog-filed my-blog-single">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="my-blog-col">
+						<% image_tag @blog.image.medium, alt: @blog.name %>
+						<div class="my-blog-heading">
+							<div class="my-processing">
+                                <h3 class="my-blog-title"><span><%= @blog.name %></span></h3>
+                            </div>
+                            
+						</div>
+						<p><%= @blog.content.html_safe %></p>
+						
+						<% render "comment" %>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="my-blog-col">
+						<% render 'search_box' %>
+	                    <div class="my-post">
+	                    	<h3 class="my-sidebar-title fix">Tin tức khác</h3>
+	                    	<% @newest_articles.each do |post| %>
+                                <div class="my-post-item">
+                                    <%= image_tag post.image.medium, alt: post.name %><!--70x80-->
+                                    <h5><%= link_to post.name, article_link(post) %></h5>
+                                    <span><%= short_text(post.content, 20) %> <a href="<%= article_link(post) %>"></a></span>
+                                </div>
+                            <% end %>
+	                    </div>
+	                    <% render 'orther' %>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog end -->

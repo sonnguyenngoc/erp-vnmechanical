@@ -1,9 +1,15 @@
 <div class="collapse navbar-collapse my-container-three" id="navbar-menu">
     <ul class="nav navbar-nav navbar-left" data-in="fadeIn">
-        <li><%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ', class: 'active' %></li>
-        <li><%= link_to 'Giới Thiệu', erp_vnmechanical.about_us_path, title: 'Giới Thiệu', class: '' %></li>
+        <li><%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ',
+                class: "#{ 'active' if (params[:controller] == "erp/vnmechanical/frontend/home") }" %></li>
+        <li>
+            <%= link_to 'Giới Thiệu', erp_vnmechanical.about_us_path, title: 'Giới Thiệu', 
+                class: "#{ 'active' if (params[:controller] == "erp/vnmechanical/frontend/information" &&
+                                        params[:action] == "about_us") }" %>
+        </li>
         <li class="dropdown">
-            <%= link_to 'Dịch Vụ', erp_vnmechanical.service_listing_path, class: 'dropdown-toggle', title: 'Dịch Vụ', data: {toggle: 'dropdown'} %>
+            <%= link_to 'Dịch Vụ', 'javascript:;', class: "dropdown-toggle
+                #{ 'active' if params[:service_id].present? }", title: 'Dịch Vụ', data: {toggle: 'dropdown'} %>
             <ul class="dropdown-menu">
                 <% Erp::Articles::Category.where(alias: Erp::Articles::Category::ALIAS_SERVICE).each do |menu| %>
                     <% service = Erp::Articles::Article.find_by_category_id(menu.id) %>
@@ -15,7 +21,8 @@
             </ul>
         </li>
         <li class="dropdown">
-            <%= link_to 'Sản Phẩm', 'javascript:;', class: 'dropdown-toggle', title: 'Sản Phẩm', data: {toggle: 'dropdown'} %>
+            <%= link_to 'Sản Phẩm', 'javascript:;', class: "dropdown-toggle
+                #{ 'active' if params[:menu_id].present? }", title: 'Sản Phẩm', data: {toggle: 'dropdown'} %>
             <ul class="dropdown-menu">
                 <% Erp::Menus::Menu.get_menus.get_active.each do |menu| %>
                     <li><%= link_to menu.name, menu_link(menu),
@@ -23,10 +30,23 @@
                 <% end %>
             </ul>
         </li>
-        <li><%= link_to 'Tin Tức', erp_vnmechanical.blog_listing_path, title: 'Tin Tức', class: '' %></li>
-        <li><%= link_to 'Hình Ảnh', erp_vnmechanical.gallery_path, title: 'Hình Ảnh', class: '' %></li>
-        <li><%= link_to 'Tuyển Dụng', erp_vnmechanical.recruitment_listing_path, title: 'Tuyển Dụng', class: '' %></li>
-        <li><%= link_to 'Liên Hệ', erp_vnmechanical.contact_us_path, title: 'Liên Hệ', class: '' %></li>
+        <li>
+            <%= link_to 'Tin Tức', erp_vnmechanical.blog_listing_path, title: 'Tin Tức',
+                    class: "#{ 'active' if (params[:controller] == "erp/vnmechanical/frontend/blog") }" %>
+        </li>
+        <li>
+            <%= link_to 'Hình Ảnh', erp_vnmechanical.gallery_path, title: 'Hình Ảnh',
+                    class: "#{ 'active' if (params[:controller] == "erp/vnmechanical/frontend/gallery") }" %>
+        </li>
+        <li>
+            <%= link_to 'Tuyển Dụng', erp_vnmechanical.recruitment_listing_path, title: 'Tuyển Dụng',
+                    class: "#{ 'active' if (params[:controller] == "erp/vnmechanical/frontend/recruitment") }" %>
+        </li>
+        <li>
+            <%= link_to 'Liên Hệ', erp_vnmechanical.contact_us_path, title: 'Liên Hệ',
+                class: "#{ 'active' if (params[:controller] == "erp/vnmechanical/frontend/information" &&
+                                        params[:action] == "contact_us") }" %>
+        </li>
     </ul>
     <div class="my-shopping page-two pull-right">
         <a href="#"><span class="icon icon-ShoppingCart my-shopping-icon"></span></a>

@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="my-inner-heading-col">
-                    <h2><%= @service.name %></h2>
+                    <h2><%= @service.category_name %></h2>
                     <p>
                         <%= link_to 'Trang Chủ', erp_vnmechanical.root_path, title: 'Quay về trang chủ' %>
                         <%= link_to 'Dịch Vụ', erp_vnmechanical.service_listing_path, title: 'Dịch Vụ', class: 'bread-back' %>
-                        <span class='bread-back'><%= @service.category_name %></span>
+                        <span class='bread-back'><%= @service.name %></span>
                     </p>
                 </div>
             </div>
@@ -25,9 +25,8 @@
                 <div class="my-service-details-col">
                     <div class="my-processing">
                         <div class="my-service-details-col">
-                            <h2>Mô tả <span>Dịch vụ</span></h2>
-                            <p class="my-para-space text-justify">Nam volutpat, nulla et tempor imperdiet, sapien massa consequat orci, non ornare odio eros nec nunc. Aenean luctus tortor bibendum nisi maximus tempor. Aenean nec dolor ut eros commodo interdum eget quis lectus. Donec libero ipsum, lobortis eget ante vel, pretium molestie ligula. Proin suscipit, magna et sodales condimentum, massa ligula ullamcorper velit, ac tristique massa orci ut quam. Mauris sodales eros id augue iaculis, sit amet vulputate libero luctus.</p>
-                            <p>Nam volutpat, nulla et tempor imperdiet, sapien massa consequat orci, non ornare odio eros nec nunc. Aenean luctus tortor bibendum nisi maximus tempor. Aenean nec dolor ut eros commodo interdum eget quis lectus. Donec libero ipsum, lobortis eget ante vel.</p>
+                            <h2>Dịch vụ <span><%= @service.name %></span></h2>
+                            <p><%= @service.content.html_safe %></p>
                         </div>
                     </div>                    
                 </div>
@@ -35,12 +34,12 @@
             <div class="col-md-3">
                 <div class="my-Service-details-col">
                     <ul>
-                        <li><%= link_to 'Tư Vấn', erp_vnmechanical.service_detail_path, title: '' %></li>
-                        <li><%= link_to 'Nâng Cấp', erp_vnmechanical.service_detail_path, title: '' %></li>
-                        <li><%= link_to 'Hỗ Trợ Kỹ Thuật', erp_vnmechanical.service_detail_path, title: '' %></li>
-                        <li><%= link_to 'Phụ Tùng Thay Thế', erp_vnmechanical.service_detail_path, title: '' %></li>
-                        <li><%= link_to 'Bảo Trì', erp_vnmechanical.service_detail_path, title: '' %></li>
-                        <li><%= link_to 'Lắp Đặt - Chạy Thử - Đào Tạo', erp_vnmechanical.service_detail_path, title: '' %></li>
+                        <% @categories.each do |category| %>
+                        <% service = Erp::Articles::Article.find_by_category_id(category.id) %>
+                            <li class="<%= 'active' if (!service.nil? and (service.id == params[:service_id].to_i)) %>">
+                                <%= link_to category.name, (service.nil? ? 'javascript:;' : service_link(service)) %>
+                            </li>
+                        <% end %>
                     </ul>
                 </div>
             </div>

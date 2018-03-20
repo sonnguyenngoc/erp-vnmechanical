@@ -8,6 +8,8 @@ module Erp
         
         def detail
           @blog = Erp::Articles::Article.find(params[:blog_id])
+          @newest_articles = Erp::Articles::Article.newest_articles(6)
+            .where.not(id: @blog.id)
           @meta_keywords = @blog.meta_keywords
           @meta_description = @blog.meta_description
         end
