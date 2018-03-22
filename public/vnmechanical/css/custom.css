@@ -224,3 +224,25 @@ nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a.active {
     background: none;
 }
 /*Xử lý nút add giỏ hàng - END*/
+
+.pagination-vnmechanical {
+    text-align: right;
+}
+.pagination-vnmechanical ul.pagination.pagination {
+    margin: 0;
+}
+.pagination-vnmechanical .row.pagination-row div:first-child div {
+    display: none;
+}
+.my-header-top-bar .my-header-top-content ul li a {
+    color: #ffffff;
+}
+.my-service-item .my-service-title.fix {
+    background: linear-gradient(to right,#00000036  0,#00000036  50%,#00000036  100%) !important;
+}
+.my-service-item .my-service-title h4 {
+    font-size: 16px;
+}
+.my-service-item .my-service-title .text-primary a {
+    color: #41aaaa;
+}

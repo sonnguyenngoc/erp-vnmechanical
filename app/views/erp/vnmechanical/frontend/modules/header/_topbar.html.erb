@@ -15,13 +15,13 @@
                         <li>
                             <p>
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <%= contact.phone %>
+                                <%= link_to contact.phone, "tel:#{contact.phone}" %>
                             </p>
                         </li>
                         <li>
                             <p>
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                <%= contact.email %>
+                                <%= mail_to contact.email, contact.email %>
                             </p>
                         </li>
                     </ul>

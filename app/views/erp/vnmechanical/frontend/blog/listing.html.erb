@@ -21,8 +21,8 @@
     <div class="container">
         <div class="row animatedParent animateOnce">
             <% if @blogs.count > 0 %>
-                <% @blogs.each do |blog| %>
-                    <div class="row">
+                <div class="row">
+                    <% @blogs.each_with_index do |blog,index| %>
                         <div class="col-md-4">
                             <div class="my-blog-col animated fadeInUpShort slow delay-250">
                                 <div class="my-blog-image">
@@ -37,11 +37,11 @@
                                         <li><i class="fa fa-clock-o"></i> <%= relative_time(blog.created_at) %></li>
                                     </ul>
                                 </div>
-
                             </div>
                         </div>
-                    </div>
-                <% end %>
+                        <%= "</div><div class=\"row\">".html_safe if index%3 == 2 %>
+                    <% end %>
+                </div>
                 <div class="pagination-vnmechanical">
                     <%= erp_datalist_pagination(@blogs) %>
                 </div>
