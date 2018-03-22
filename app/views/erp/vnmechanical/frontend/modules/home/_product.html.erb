@@ -1,0 +1,44 @@
+<!-- Service start -->
+<section class="my-product-field my-service-field my-inner-service">
+    <!--<img class="my-transpar-bg-left" src="/vnmechanical/images/icon/wagon.png" alt="">-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-4 col-sm-12">
+                <div class="my-section-title my-section-title-right text-right">
+                    <h2>Sản phẩm <span>tiêu biểu</span></h2>
+                    <div class="my-title-line"></div>
+                    <div class="clearfix"></div>
+                    <p>
+                        Sản phẩm của chúng tôi luôn đa dạng về chủng loại. Tạo nên dây chuyền sản xuất sản phẩm hoàn
+                        chỉnh, chuyên môn hóa quy trình sản xuất, tối ưu sức lao động và tiết kiệm chi phí,
+                        nâng cao năng lực sản xuất của doanh nghiệp.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="co-sm-12">
+                <div class="owl-carousel-grid-four">
+                    <% newest_products.each_with_index do |product,index| %>
+                        <div class="item">
+                            <div class="my-single-item">
+                                <div class="my-service-item">
+                                    <% if product.main_image.image_url.present? %>
+                                        <%= image_tag product.main_image.image_url.thumb650, alt: product.product_name %>
+                                    <% else %>
+                                        <img src="/vnmechanical/images/service/2.jpg" alt="">
+                                    <% end %>
+                                    <div class="my-service-title">
+                                        <h4><%= link_to truncate(strip_tags(product.product_name), length: 30), product_link(product), title: product.product_name %></h4>
+                                    </div>
+                                </div>
+                                <a class="layer" href="<%= product_link(product) %>"></a>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service end -->

@@ -1,65 +1,61 @@
-<section class="my-blog-filed my-blog-filed-two">
-    <img class="my-transpar-bg-left" src="/vnmechanical/images/icon/factory-1.png" alt="">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <div class="my-section-title">
-                    <h2>Tin tức <span>mới</span></h2>
-                    <div class="my-title-line"></div>
-                    <div class="clearfix"></div>
-                    <!--<p>Nulla eu ipsum vehicula, vehicula metus nec, suscipit elit. Morbi sed libero ac velit aliquam rhoncus vestibulum sed purus. Sed scelerisque rutrum eleifend.</p>-->
-                </div>	
+<% if newest_blogs.count > 0 %>
+    <section class="my-blog-filed my-blog-filed-two">
+        <img class="my-transpar-bg-left" src="/vnmechanical/images/icon/factory-1.png" alt="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="my-section-title">
+                        <h2>Tin tức <span>mới</span></h2>
+                        <div class="my-title-line"></div>
+                        <div class="clearfix"></div>
+                        <!--<p>Nulla eu ipsum vehicula, vehicula metus nec, suscipit elit. Morbi sed libero ac velit aliquam rhoncus vestibulum sed purus. Sed scelerisque rutrum eleifend.</p>-->
+                    </div>	
+                </div>
             </div>
+            <% newest_blogs.each_with_index do |blog,index| %>
+                <div class="row">
+                    <% index = index + 1 %>
+                    <% if index%2 == 0 %>
+                        <div class="col-md-6 col-sm-6 animatedParent animateOnce">
+                            <div class="my-blog-col animated fadeInLeftShort slow delay-250">
+                                <div class="my-blog-heading">
+                                    <h2><%= blog.created_at.strftime('%d/%m') %>/<span><%= blog.created_at.strftime('%Y') %></span></h2>
+                                    <h3>
+                                        <%= link_to blog.name, article_link(blog) %>
+                                    </h3>
+                                </div>
+                                <p><%= short_text(blog.content, 90) %> <a href="<%= article_link(blog) %>">[...]</a></p>
+                            </div>	
+                        </div>
+                        <div class="col-md-6 col-sm-6 animatedParent animateOnce">
+                            <div class="my-blog-col animated fadeInRightShort slow delay-250">
+                                <div class="my-layer-black">
+                                    <%= image_tag blog.image.medium, alt: blog.name %> <!--555x292-->
+                                </div>
+                            </div>	
+                        </div>
+                    <% else %>
+                        <div class="col-md-6 col-sm-6 animatedParent animateOnce">
+                            <div class="my-blog-col animated fadeInLeftShort slow delay-250">
+                                <div class="my-layer-black">
+                                    <%= image_tag blog.image.medium, alt: blog.name %> <!--555x292-->
+                                </div>
+                            </div>	
+                        </div>
+                        <div class="col-md-6 col-sm-6 animatedParent animateOnce">
+                            <div class="my-blog-col animated fadeInRightShort slow delay-250">
+                                <div class="my-blog-heading">
+                                    <h2><%= blog.created_at.strftime('%d/%m') %>/<span><%= blog.created_at.strftime('%Y') %></span></h2>
+                                    <h3>
+                                        <%= link_to blog.name, article_link(blog) %>
+                                    </h3>
+                                </div>
+                                <p><%= short_text(blog.content, 90) %> <a href="<%= article_link(blog) %>">[...]</a></p>
+                            </div>	
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
         </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 animatedParent animateOnce">
-                <div class="my-blog-col animated fadeInLeftShort slow delay-250">
-                    <div class="my-layer-black">
-                        <img src="/vnmechanical/images/blog/4.jpg" alt="">
-                    </div>
-                </div>	
-            </div>
-            <div class="col-md-6 col-sm-6 animatedParent animateOnce">
-                <div class="my-blog-col animated fadeInRightShort slow delay-250">
-                    <div class="my-blog-heading">
-                        <h2>08 / <span>april</span></h2>
-                        <h3><a href="#">Nulla eu ipsum vehicula, vehicula metus nec, suscipit elit. Morbi sed libero ac</a></h3>
-                    </div>
-                    <p>velit aliquam rhoncus vestibulum sed purus. Sed scelerisque rutrum eleifend. Nunc sem sem, accumsan at pulvinar in, pulvinar ut orci. Nunc nec accumsan tellus. Integer vel luctus urna. <a href="#">[.....]</a></p>
-                    <div class="my-blog-bottom clearfix">
-                        <ul>
-                            <li><i class="icon icon-Pencil"></i> <a href="#">jon william</a></li>
-                            <li>|</li>
-                            <li><i class="icon icon-MessageRight"></i><a href="#">5 Comments</a></li>
-                        </ul>
-                    </div>
-                </div>	
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 animatedParent animateOnce">
-                <div class="my-blog-col animated fadeInLeftShort slow delay-250">
-                    <div class="my-blog-heading">
-                        <h2>08 / <span>april</span></h2>
-                        <h3><a href="#">Nulla eu ipsum vehicula, vehicula metus nec, suscipit elit. Morbi sed libero ac</a></h3>
-                    </div>
-                    <p>velit aliquam rhoncus vestibulum sed purus. Sed scelerisque rutrum eleifend. Nunc sem sem, accumsan at pulvinar in, pulvinar ut orci. Nunc nec accumsan tellus. Integer vel luctus urna. <a href="#">[.....]</a></p>
-                    <div class="my-blog-bottom clearfix">
-                        <ul>
-                            <li><i class="icon icon-Pencil"></i> <a href="#">jon william</a></li>
-                            <li>|</li>
-                            <li><i class="icon icon-MessageRight"></i><a href="#">5 Comments</a></li>
-                        </ul>
-                    </div>
-                </div>	
-            </div>
-            <div class="col-md-6 col-sm-6 animatedParent animateOnce">
-                <div class="my-blog-col animated fadeInRightShort slow delay-250">
-                    <div class="my-layer-black">
-                        <img src="/vnmechanical/images/blog/5.jpg" alt="">
-                    </div>
-                </div>	
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+<% end %>

@@ -99,7 +99,7 @@ nav.navbar.bootsnav.yellow ul.nav > li > a.active {
 .my-features-field {
     padding: 80px 0px 20px;
 }
-.my-shop-field, .my-shop-single, .my-project-title, .my-blog-filed {
+.my-shop-field, .my-shop-single, .my-project-title, .my-blog-filed, .my-product-field {
     padding: 30px 0 20px;
 }
 .my-shop-bottom h4, .my-section-title, .list-inline {
@@ -155,6 +155,13 @@ nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a.active {
 @media only screen and (min-width: 768px) {
     .cd-slider-nav {
         height: 50px;
+        bottom: 0;
+    }
+    .cd-slider-nav .cd-marker, .cd-slider-nav li {
+        width: 50px;
+    }
+    .cd-slider-nav a {
+        padding-top: 35px;
     }
 }
 .my-header-top-content, .my-header-top-content:after, nav.navbar.bootsnav.my-menu-style-two #navbar-menu {
@@ -202,3 +209,18 @@ nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu > li > a.active {
 .my-Service-details-col ul li.active {
     border-left-color: #41aaaa;
 }
+.my-main-contact-from .my-form-control {
+    margin-bottom: 20px;
+}
+/*Xử lý nút add giỏ hàng - START */
+.my-add-btn:hover a {
+    display: block;
+}
+.my-shop-bottom .my-add-btn:hover:after {
+    display: none;
+}
+.my-header-nav .my-shopping-icon:after {
+    content: "";
+    background: none;
+}
+/*Xử lý nút add giỏ hàng - END*/

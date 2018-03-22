@@ -3,7 +3,7 @@
 <!-- Main Slider end -->
 
 <!-- Features start -->
-<!--<%= render "erp/vnmechanical/frontend/modules/home/feature" %>-->
+<!--<% render "erp/vnmechanical/frontend/modules/home/feature" %>-->
 <!-- Features end -->
 
 <!-- About start -->
@@ -11,25 +11,29 @@
 <!-- About end -->
 
 <!-- About 2 start -->
-<%= render "erp/vnmechanical/frontend/modules/home/about_2" %>
+<% render "erp/vnmechanical/frontend/modules/home/about_2" %>
 <!-- About 2 end -->
 
 <!-- Works start -->
-<%= render "erp/vnmechanical/frontend/modules/home/work" %>
+<% render "erp/vnmechanical/frontend/modules/home/work" %>
 <!-- Works end -->
+
+<!-- Products start -->
+<%= render "erp/vnmechanical/frontend/modules/home/product", newest_products: @newest_products %>
+<!-- Products end -->
 
 <!-- Singup start -->
 <%= render "erp/vnmechanical/frontend/modules/home/singup" %>
 <!-- Singup end -->
 
 <!-- Team start -->
-<%= render "erp/vnmechanical/frontend/modules/home/team" %>
+<% render "erp/vnmechanical/frontend/modules/home/team" %>
 <!-- Team end -->
 
 <!-- Separator start -->
-<%= render "erp/vnmechanical/frontend/modules/home/separator" %>
+<% render "erp/vnmechanical/frontend/modules/home/separator" %>
 <!-- Separator end -->
 
 <!-- Blog start -->
-<%= render "erp/vnmechanical/frontend/modules/home/blog" %>
+<%= render "erp/vnmechanical/frontend/modules/home/blog", newest_blogs: @newest_blogs %>
 <!-- Blog end -->

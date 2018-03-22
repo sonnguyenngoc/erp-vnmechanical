@@ -20,6 +20,15 @@ module Erp
       def service_link(service)
         erp_vnmechanical.service_detail_path(service.id, title:  url_friendly(service.name))
       end
+      
+      # display full address
+      def full_address(contact)
+        str = []
+        str << contact.address if contact.address.present?
+        str << contact.district_name if contact.district_name.present?
+        str << contact.state_name if contact.state_name.present?
+        str.join(", ")
+      end
     end
   end
 end

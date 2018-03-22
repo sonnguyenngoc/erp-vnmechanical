@@ -31,9 +31,11 @@
                         <div class="my-shop-col animated fadeInUpShort slow delay-250">
                             <div class="my-shop-item">
                                 <%= image_tag product.main_image.image_url.thumb650, alt: product.product_name %>
-                                <!--<div class="my-shop-layer-arrow" style="border-top: 60px solid #00bcd5;">-->
-                                <!--    <p style="color: #fff">khuyến mãi</p>-->
-                                <!--</div>-->
+                                <% if product.is_deal? %>
+                                    <div class="my-shop-layer-arrow" style="border-top: 60px solid #00bcd5;">
+                                        <p style="color: #fff">kh.mãi</p>
+                                    </div>
+                                <% end %>
                                 <div class="my-shop-layer">
                                     <%= link_to '<i class="icofont icofont-search-alt-1"></i>'.html_safe,
                                                 product.main_image.image_url.thumb650.url, title: 'Xem hình ảnh',
@@ -44,10 +46,10 @@
                             </div>
                             <div class="my-shop-bottom">
                                 <h3><%= link_to product.product_name, product_link(product), title: product.product_name %></h3>
-                                <h4 style="font-family: sans-serif;color: #00bcd5;"> Call: 094 774 8895</h4>
+                                <h4 style="font-family: sans-serif;color: #00bcd5;"> Liên hệ: 094 774 8895</h4>
                                 <div class="my-add-btn" style="background: #00bcd5;">
-                                    <a href="#">
-                                        THÊM VÀO GIỎ HÀNG
+                                    <a href="<%= erp_vnmechanical.contact_us_path %>">
+                                        Đặt hàng
                                     </a>
                                 </div>
                             </div>

@@ -6,6 +6,7 @@ Erp::Vnmechanical::Engine.routes.draw do
   
   get "gioi-thieu.html" => "frontend/information#about_us", as: :about_us
   get "lien-he.html" => "frontend/information#contact_us", as: :contact_us
+  post "lien-he.html" => "frontend/information#contact_us"
   
   #get "san-pham.html" => "frontend/product#listing", as: :all_product
   get "chuyen-muc(/:menu_id)(/:title).html" => "frontend/product#listing", as: :product_listing
